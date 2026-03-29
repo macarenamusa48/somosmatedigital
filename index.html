@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -34,7 +34,6 @@
           <div class="nav-links" id="nav-links">
             <a href="#servicios">Servicios</a>
             <a href="#proceso">Proceso</a>
-            <a href="#pricing">Planes</a>
             <a href="#faq">FAQ</a>
             <a href="#contacto">Contacto</a>
             <a class="button button-primary nav-cta" href="#contacto">Conversemos</a>
@@ -44,6 +43,8 @@
 
       <main>
         <section class="hero section">
+          <div class="section-vector vector-orbit" aria-hidden="true"></div>
+          <div class="section-vector vector-grid" aria-hidden="true"></div>
           <div class="container hero-inner">
             <div class="hero-copy reveal">
               <span class="eyebrow">Siempre con codigo, nunca con humo</span>
@@ -150,6 +151,7 @@ if (dato.disperso) {
         </section>
 
         <section class="services section" id="servicios">
+          <div class="section-vector vector-wave" aria-hidden="true"></div>
           <div class="container">
             <div class="section-heading reveal">
               <span class="eyebrow">Servicios</span>
@@ -213,6 +215,7 @@ if (dato.disperso) {
         </section>
 
         <section class="process section" id="proceso">
+          <div class="section-vector vector-orbit vector-orbit-secondary" aria-hidden="true"></div>
           <div class="container process-grid">
             <div class="section-heading reveal">
               <span class="eyebrow">Proceso</span>
@@ -288,58 +291,6 @@ if (dato.disperso) {
               <article class="testimonial-card reveal">
                 <p>"Cada solucion esta pensada para operar mejor, no para complicar mas."</p>
                 <span>Valor real</span>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="pricing section" id="pricing">
-          <div class="container">
-            <div class="section-heading reveal">
-              <span class="eyebrow">Planes</span>
-              <h2>Formatos de trabajo flexibles para distintas etapas de madurez.</h2>
-              <p>Los valores son referenciales para presentar estructura de propuesta. Se ajustan segun alcance real.</p>
-            </div>
-            <div class="pricing-toggle reveal">
-              <button class="billing-toggle active" type="button" data-billing="monthly">Mensual</button>
-              <button class="billing-toggle" type="button" data-billing="yearly">Anual <span>Ahorra 20%</span></button>
-            </div>
-            <div class="pricing-grid">
-              <article class="pricing-card reveal">
-                <span class="pricing-label">Starter</span>
-                <h3>Primeros pasos</h3>
-                <div class="price" data-monthly="USD 450" data-yearly="USD 360">USD 450</div>
-                <p>Para ordenar un proceso puntual y validar impacto rapido.</p>
-                <ul>
-                  <li>Diagnostico inicial</li>
-                  <li>1 automatizacion o integracion simple</li>
-                  <li>Seguimiento mensual</li>
-                </ul>
-                <a class="button button-secondary" href="#contacto">Consultar</a>
-              </article>
-              <article class="pricing-card featured reveal">
-                <span class="pricing-label">Pro</span>
-                <h3>Operacion mas eficiente</h3>
-                <div class="price" data-monthly="USD 950" data-yearly="USD 760">USD 950</div>
-                <p>Para empresas que necesitan conectar sistemas, automatizar y medir mejor.</p>
-                <ul>
-                  <li>Multiples flujos automatizados</li>
-                  <li>Dashboards y reportes</li>
-                  <li>IA aplicada en casos concretos</li>
-                </ul>
-                <a class="button button-primary" href="#contacto">Quiero este plan</a>
-              </article>
-              <article class="pricing-card reveal">
-                <span class="pricing-label">Enterprise</span>
-                <h3>Transformacion integral</h3>
-                <div class="price" data-monthly="A medida" data-yearly="A medida">A medida</div>
-                <p>Para operaciones con procesos complejos, necesidades de software propio o multiples integraciones.</p>
-                <ul>
-                  <li>Arquitectura a medida</li>
-                  <li>Software y automatizaciones personalizadas</li>
-                  <li>Acompanamiento estrategico</li>
-                </ul>
-                <a class="button button-secondary" href="#contacto">Hablar con el equipo</a>
               </article>
             </div>
           </div>
@@ -426,6 +377,7 @@ if (dato.disperso) {
         </section>
 
         <section class="cta section" id="contacto">
+          <div class="section-vector vector-grid vector-grid-bottom" aria-hidden="true"></div>
           <div class="container cta-card reveal">
             <span class="eyebrow">Contacto</span>
             <h2>Tu companero en la transformacion digital.</h2>
@@ -447,7 +399,6 @@ if (dato.disperso) {
           <div>
             <a href="#servicios">Servicios</a>
             <a href="#proceso">Proceso</a>
-            <a href="#pricing">Planes</a>
           </div>
           <div>
             <a href="#faq">FAQ</a>
