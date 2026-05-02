@@ -162,6 +162,66 @@ async function analyzeUiHeuristics(url) {
   };
 }
 
+function pickFocusArea(prompt) {
+  const normalizedPrompt = prompt.toLowerCase();
+
+  if (normalizedPrompt.includes("hero")) {
+    return "Hero";
+  }
+
+  if (normalizedPrompt.includes("service") || normalizedPrompt.includes("servicio")) {
+    return "Services / Servicios";
+  }
+
+  if (normalizedPrompt.includes("card")) {
+    return "Benefits / Por que Mate Digital";
+  }
+
+  if (normalizedPrompt.includes("faq")) {
+    return "FAQ";
+  }
+
+  if (normalizedPrompt.includes("footer")) {
+    return "Footer";
+  }
+
+  return "Landing completa";
+}
+
+async function generateUiProposal(prompt) {
+  const analysis = await analyzeUiHeuristics("local://mate-digital");
+  const focusArea = pickFocusArea(prompt);
+
+  const improvedUI = {
+    prompt,
+    focusArea,
+    direction: {
+      visualStyle: "dark premium, sobrio, con profundidad suave y acentos medidos",
+      typography: "headings grandes y compactos, cuerpo corto, mejor respiracion vertical",
+      motion: "microanimaciones suaves, hover lift leve y transiciones de 180 a 300ms",
+    },
+    issues: analysis.issues,
+    suggestions: analysis.suggestions,
+    sectionPlan: [
+      `Reforzar ${focusArea} sin cambiar el contenido ni la estructura actual.`,
+      "Mejorar contraste entre fondo, superficies y texto secundario.",
+      "Usar una sola logica de bordes, radios, sombras y estados hover en toda la UI.",
+    ],
+    componentIdeas: [
+      "CTA primario con mayor peso visual, glow contenido y foco claro.",
+      "Cards con borde tenue, sombra difusa y elevacion suave al hover.",
+      "Elementos decorativos de fondo con grid, blur radial o lineas tenues en movimiento.",
+    ],
+    implementationHints: [
+      "Ajustar variables globales antes que estilos aislados.",
+      "Repetir patrones visuales entre hero, servicios, testimonios y CTA final.",
+      "Mantener el copy intacto y limitar los cambios al sistema visual.",
+    ],
+  };
+
+  return improvedUI;
+}
+
 const server = new McpServer(
   {
     name: "mate-digital-mcp",
@@ -291,6 +351,22 @@ server.registerTool(
   async ({ url }) => {
     const analysis = await analyzeUiHeuristics(url);
     return toTextResult(JSON.stringify(analysis, null, 2));
+  }
+);
+
+server.registerTool(
+  "generate-ui",
+  {
+    title: "Generar propuesta UI",
+    description:
+      "Genera una propuesta de mejora visual para la landing a partir de un prompt, usando el contexto actual del proyecto.",
+    inputSchema: {
+      prompt: z.string().min(4),
+    },
+  },
+  async ({ prompt }) => {
+    const improvedUI = await generateUiProposal(prompt);
+    return toTextResult(JSON.stringify(improvedUI, null, 2));
   }
 );
 
