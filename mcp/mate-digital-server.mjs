@@ -91,6 +91,77 @@ function searchInText(text, query) {
     .filter(({ line }) => line.toLowerCase().includes(normalizedQuery));
 }
 
+function countMatches(text, pattern) {
+  const matches = text.match(pattern);
+  return matches ? matches.length : 0;
+}
+
+async function analyzeUiHeuristics(url) {
+  const [html, css, js] = await Promise.all([
+    readProjectFile("html"),
+    readProjectFile("css"),
+    readProjectFile("js"),
+  ]);
+
+  const issues = [];
+  const suggestions = [];
+  const ctaCount = countMatches(html, /<a[^>]*class="[^"]*(?:button|btn|cta)[^"]*"|<button/gi);
+  const cardCount = countMatches(html, /class="[^"]*card[^"]*"/gi);
+  const headingCount = countMatches(html, /<h[1-3][^>]*>/gi);
+  const glowSignals = countMatches(css, /(box-shadow|filter:\s*blur|radial-gradient|drop-shadow)/gi);
+  const motionSignals = countMatches(`${css}\n${js}`, /(animation|transition|transform|requestAnimationFrame|@keyframes)/gi);
+  const accentSignals = countMatches(css, /#3b82f6|rgb\(59,\s*130,\s*246\)|rgba\(59,\s*130,\s*246/gi);
+
+  if (ctaCount < 3) {
+    issues.push("CTA con presencia limitada");
+    suggestions.push("Repetir acciones primarias en hero, secciones clave y cierre final.");
+  }
+
+  if (cardCount < 6) {
+    issues.push("Sistema de cards poco desarrollado");
+    suggestions.push("Reforzar modulos con cards mas consistentes, contraste interno y estados hover.");
+  }
+
+  if (glowSignals < 4) {
+    issues.push("Profundidad visual insuficiente");
+    suggestions.push("Agregar glow sutil, sombras suaves y capas oscuras elevadas para dar relieve.");
+  }
+
+  if (motionSignals < 8) {
+    issues.push("Motion demasiado basico");
+    suggestions.push("Sumar microanimaciones de entrada, hover lift y fondo dinamico discreto en hero.");
+  }
+
+  if (headingCount < 8) {
+    issues.push("Jerarquia editorial corta");
+    suggestions.push("Aumentar el contraste entre headings, subtitulos y texto de apoyo.");
+  }
+
+  if (accentSignals > 12) {
+    issues.push("Acento visual con demasiada presencia");
+    suggestions.push("Reservar el color de acento para CTAs, focos y detalles de estado.");
+  }
+
+  if (issues.length === 0) {
+    issues.push("No se detectaron alertas fuertes en la heuristica actual");
+    suggestions.push("Mantener la consistencia visual y validar el resultado final con revision visual manual.");
+  }
+
+  return {
+    url: url ?? "local://mate-digital",
+    issues,
+    suggestions,
+    signals: {
+      ctaCount,
+      cardCount,
+      headingCount,
+      glowSignals,
+      motionSignals,
+      accentSignals,
+    },
+  };
+}
+
 const server = new McpServer(
   {
     name: "mate-digital-mcp",
@@ -204,6 +275,22 @@ server.registerTool(
       .join("\n");
 
     return toTextResult(visibleMatches);
+  }
+);
+
+server.registerTool(
+  "analyze-ui",
+  {
+    title: "Analizar UI",
+    description:
+      "Analiza la UI actual del proyecto con heuristicas de jerarquia, CTA, profundidad visual y motion.",
+    inputSchema: {
+      url: z.string().url().optional(),
+    },
+  },
+  async ({ url }) => {
+    const analysis = await analyzeUiHeuristics(url);
+    return toTextResult(JSON.stringify(analysis, null, 2));
   }
 );
 
