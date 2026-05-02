@@ -242,7 +242,7 @@
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 text-[0.72rem] font-semibold uppercase tracking-[0.18em];
+    @apply inline-flex items-center gap-2 text-[0.72rem] font-semibold tracking-[0.12em];
     color: rgba(231, 235, 242, 0.62);
   }
 
@@ -569,11 +569,11 @@
   .hero-code-shell::before {
     content: "";
     position: absolute;
-    inset: 10% 8% auto;
-    height: 48%;
-    background: radial-gradient(circle at 50% 50%, rgba(191, 230, 255, 0.1), transparent 64%);
-    filter: blur(64px);
-    opacity: 0.76;
+    inset: 12% 10% auto;
+    height: 44%;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.14), transparent 60%);
+    filter: blur(56px);
+    opacity: 0.84;
   }
 
   .hero-code-shell::after {
@@ -581,8 +581,8 @@
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(180deg, rgba(4, 7, 13, 0.12), rgba(4, 7, 13, 0.02) 24%, rgba(4, 7, 13, 0.32) 100%),
-      radial-gradient(circle at 28% 50%, rgba(4, 7, 13, 0.2), transparent 34%);
+      linear-gradient(180deg, rgba(4, 7, 13, 0.08), rgba(4, 7, 13, 0.02) 26%, rgba(4, 7, 13, 0.28) 100%),
+      radial-gradient(circle at 28% 50%, rgba(4, 7, 13, 0.18), transparent 34%);
     pointer-events: none;
   }
 
@@ -590,15 +590,15 @@
     position: relative;
     min-height: 18rem;
     white-space: pre-wrap;
-    opacity: 0.2;
-    filter: blur(0.12px);
+    opacity: 0.18;
+    filter: blur(0.06px);
     letter-spacing: -0.015em;
-    text-shadow: 0 0 18px rgba(191, 230, 255, 0.1);
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.12);
     transition: opacity 540ms ease;
   }
 
   .code-ambient.is-fading {
-    opacity: 0.04;
+    opacity: 0.08;
   }
 
   .code-typing {
@@ -614,8 +614,8 @@
     margin-left: 0.12rem;
     vertical-align: text-bottom;
     border-radius: 999px;
-    background: rgba(211, 236, 255, 0.96);
-    box-shadow: 0 0 14px rgba(191, 230, 255, 0.34);
+    background: rgba(0, 212, 255, 0.96);
+    box-shadow: 0 0 14px rgba(0, 212, 255, 0.34);
     animation: blink 1s steps(1) infinite;
   }
 }
