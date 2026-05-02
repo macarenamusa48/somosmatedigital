@@ -47,6 +47,7 @@ if (hero) {
   });
 }
 
+const heroCodeLoop = document.querySelector(".hero-code[data-code-loop]");
 const codeTypingBlocks = document.querySelectorAll(".code-typing");
 
 const typeCodeBlock = (block) => {
@@ -111,6 +112,76 @@ const typeCodeBlock = (block) => {
   };
 
   typeNextCharacter();
+};
+
+const runHeroCodeLoop = (block) => {
+  if (!block) {
+    return;
+  }
+
+  const code = block.querySelector("code");
+  if (!code) {
+    return;
+  }
+
+  let lines = [];
+
+  try {
+    lines = JSON.parse(block.dataset.codeLoop || "[]");
+  } catch {
+    lines = [];
+  }
+
+  if (!lines.length) {
+    return;
+  }
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (reducedMotion) {
+    code.textContent = lines.join("\n");
+    return;
+  }
+
+  const typeSequence = () => {
+    block.classList.remove("is-fading");
+    code.textContent = "";
+
+    let lineIndex = 0;
+    let charIndex = 0;
+
+    const typeNextCharacter = () => {
+      const currentLine = lines[lineIndex];
+
+      if (currentLine === undefined) {
+        window.setTimeout(() => {
+          block.classList.add("is-fading");
+          window.setTimeout(typeSequence, 540);
+        }, 1300);
+        return;
+      }
+
+      code.textContent = lines
+        .slice(0, lineIndex)
+        .join("\n")
+        .concat(lineIndex > 0 ? "\n" : "", currentLine.slice(0, charIndex));
+
+      if (charIndex < currentLine.length) {
+        charIndex += 1;
+        window.setTimeout(typeNextCharacter, 28);
+        return;
+      }
+
+      lineIndex += 1;
+      charIndex = 0;
+      code.textContent += "\n";
+      window.setTimeout(typeNextCharacter, currentLine === "" ? 120 : 210);
+    };
+
+    typeNextCharacter();
+  };
+
+  typeSequence();
 };
 
 const interactiveCards = document.querySelectorAll(
@@ -182,6 +253,7 @@ const revealObserver = new IntersectionObserver(
 
 reveals.forEach((item) => revealObserver.observe(item));
 codeTypingBlocks.forEach((block) => revealObserver.observe(block));
+runHeroCodeLoop(heroCodeLoop);
 
 const sectionIds = ["servicios", "proceso", "faq", "contacto"];
 const sections = sectionIds
