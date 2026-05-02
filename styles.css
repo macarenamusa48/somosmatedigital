@@ -566,14 +566,18 @@
     @apply rounded-[1.25rem] border border-white/[0.08] bg-white/[0.03] shadow-[inset_0_1px_0_rgba(255,255,255,0.04)];
   }
 
+  .hero-canvas {
+    opacity: 0.92;
+  }
+
   .hero-code-shell::before {
     content: "";
     position: absolute;
-    inset: 12% 10% auto;
-    height: 44%;
-    background: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.14), transparent 60%);
-    filter: blur(48px);
-    opacity: 0.84;
+    inset: 10% 8% auto;
+    height: 48%;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.12), transparent 58%);
+    filter: blur(42px);
+    opacity: 0.82;
   }
 
   .hero-code-shell::after {
@@ -581,25 +585,24 @@
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(180deg, rgba(4, 7, 13, 0.08), rgba(4, 7, 13, 0.02) 26%, rgba(4, 7, 13, 0.28) 100%),
+      linear-gradient(180deg, rgba(4, 7, 13, 0.12), rgba(4, 7, 13, 0.04) 24%, rgba(4, 7, 13, 0.34) 100%),
       radial-gradient(circle at 28% 50%, rgba(4, 7, 13, 0.18), transparent 34%);
     pointer-events: none;
-    animation: ambientShift 16s ease-in-out infinite;
   }
 
   .code-ambient {
     position: relative;
     min-height: 18rem;
     white-space: pre-wrap;
-    opacity: 0.26;
+    opacity: 0.24;
     filter: blur(0.02px);
     letter-spacing: -0.015em;
-    text-shadow: 0 0 22px rgba(0, 212, 255, 0.16);
+    text-shadow: 0 0 22px rgba(0, 212, 255, 0.2);
     transition: opacity 540ms ease;
   }
 
   .code-ambient.is-fading {
-    opacity: 0.12;
+    opacity: 0.14;
   }
 
   .code-typing {
@@ -639,18 +642,6 @@
 
   50%, 100% {
     opacity: 0;
-  }
-}
-
-@keyframes ambientShift {
-  0%, 100% {
-    transform: translate3d(0, 0, 0) scale(1);
-    opacity: 0.9;
-  }
-
-  50% {
-    transform: translate3d(0, -10px, 0) scale(1.03);
-    opacity: 1;
   }
 }
 

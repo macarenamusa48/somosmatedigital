@@ -36,6 +36,7 @@ if (navToggle && navLinks) {
 }
 
 const hero = document.querySelector(".hero");
+const heroCanvas = document.querySelector(".hero-canvas");
 if (hero) {
   hero.addEventListener("pointermove", (event) => {
     const bounds = hero.getBoundingClientRect();
@@ -46,6 +47,123 @@ if (hero) {
     document.documentElement.style.setProperty("--pointer-y", `${Math.max(10, y)}%`);
   });
 }
+
+const initHeroCanvas = (canvas) => {
+  if (!canvas) {
+    return;
+  }
+
+  const context = canvas.getContext("2d");
+  if (!context) {
+    return;
+  }
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let width = 0;
+  let height = 0;
+  let dpr = 1;
+  let rafId = null;
+
+  const resizeCanvas = () => {
+    const bounds = canvas.getBoundingClientRect();
+    width = Math.max(1, Math.floor(bounds.width));
+    height = Math.max(1, Math.floor(bounds.height));
+    dpr = Math.min(window.devicePixelRatio || 1, 1.75);
+
+    canvas.width = Math.floor(width * dpr);
+    canvas.height = Math.floor(height * dpr);
+    context.setTransform(dpr, 0, 0, dpr, 0, 0);
+  };
+
+  const drawFrame = (time) => {
+    const t = time * 0.00018;
+    context.clearRect(0, 0, width, height);
+
+    const gradient = context.createLinearGradient(0, 0, width, height);
+    gradient.addColorStop(0, "rgba(5, 11, 20, 0.1)");
+    gradient.addColorStop(0.5, "rgba(5, 18, 34, 0.36)");
+    gradient.addColorStop(1, "rgba(4, 7, 13, 0.1)");
+    context.fillStyle = gradient;
+    context.fillRect(0, 0, width, height);
+
+    const spacing = Math.max(34, Math.min(54, width / 22));
+    const lineCount = Math.ceil(height / spacing) + 3;
+
+    context.lineWidth = 1;
+    context.strokeStyle = "rgba(0, 212, 255, 0.11)";
+    context.shadowColor = "rgba(0, 212, 255, 0.08)";
+    context.shadowBlur = 12;
+
+    for (let index = -1; index < lineCount; index += 1) {
+      const yBase = index * spacing;
+      const drift = ((t * 80) + index * 9) % spacing;
+      const amplitude = 9 + (index % 3) * 4;
+
+      context.beginPath();
+      for (let x = -spacing; x <= width + spacing; x += 18) {
+        const y =
+          yBase +
+          drift +
+          Math.sin(x * 0.012 + t * 7 + index * 0.42) * amplitude;
+
+        if (x === -spacing) {
+          context.moveTo(x, y);
+        } else {
+          context.lineTo(x, y);
+        }
+      }
+      context.stroke();
+    }
+
+    context.shadowBlur = 0;
+
+    const verticalGradient = context.createLinearGradient(0, 0, width, 0);
+    verticalGradient.addColorStop(0, "rgba(0, 212, 255, 0)");
+    verticalGradient.addColorStop(0.5, "rgba(0, 212, 255, 0.12)");
+    verticalGradient.addColorStop(1, "rgba(88, 83, 255, 0)");
+
+    context.strokeStyle = verticalGradient;
+    context.lineWidth = 1;
+
+    const verticalCount = Math.min(10, Math.max(6, Math.floor(width / 180)));
+    for (let i = 0; i < verticalCount; i += 1) {
+      const progress = i / Math.max(1, verticalCount - 1);
+      const x =
+        progress * width +
+        Math.sin(t * 4 + i * 0.9) * 12;
+
+      context.beginPath();
+      context.moveTo(x, height * 0.08);
+      context.lineTo(x, height * 0.92);
+      context.stroke();
+    }
+
+    const glowX = width * (0.5 + Math.sin(t * 2.2) * 0.1);
+    const glowY = height * (0.32 + Math.cos(t * 1.8) * 0.06);
+    const radial = context.createRadialGradient(glowX, glowY, 0, glowX, glowY, Math.max(width, height) * 0.24);
+    radial.addColorStop(0, "rgba(0, 212, 255, 0.12)");
+    radial.addColorStop(0.45, "rgba(70, 88, 255, 0.06)");
+    radial.addColorStop(1, "rgba(0, 0, 0, 0)");
+    context.fillStyle = radial;
+    context.fillRect(0, 0, width, height);
+
+    rafId = window.requestAnimationFrame(drawFrame);
+  };
+
+  resizeCanvas();
+
+  if (!reducedMotion) {
+    rafId = window.requestAnimationFrame(drawFrame);
+  } else {
+    drawFrame(0);
+    if (rafId) {
+      window.cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+  }
+
+  window.addEventListener("resize", resizeCanvas, { passive: true });
+};
 
 const heroCodeLoop = document.querySelector(".hero-code[data-code-loop]");
 const codeTypingBlocks = document.querySelectorAll(".code-typing");
@@ -254,6 +372,7 @@ const revealObserver = new IntersectionObserver(
 reveals.forEach((item) => revealObserver.observe(item));
 codeTypingBlocks.forEach((block) => revealObserver.observe(block));
 runHeroCodeLoop(heroCodeLoop);
+initHeroCanvas(heroCanvas);
 
 const sectionIds = ["servicios", "proceso", "faq", "contacto"];
 const sections = sectionIds
