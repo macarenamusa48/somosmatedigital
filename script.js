@@ -1,22 +1,36 @@
 const body = document.body;
 const header = document.querySelector(".site-header");
+const navBar = document.querySelector("header nav");
+const cursorGlow = document.querySelector(".cursor-glow");
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
 const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
 
+const setMobileMenuState = (open) => {
+  if (!navToggle || !navLinks) {
+    return;
+  }
+
+  navToggle.setAttribute("aria-expanded", String(open));
+  navLinks.classList.toggle("open", open);
+  navLinks.classList.toggle("opacity-100", open);
+  navLinks.classList.toggle("translate-y-0", open);
+  navLinks.classList.toggle("pointer-events-auto", open);
+  navLinks.classList.toggle("opacity-0", !open);
+  navLinks.classList.toggle("-translate-y-2", !open);
+  navLinks.classList.toggle("pointer-events-none", !open);
+  body.classList.toggle("menu-open", open);
+};
+
 if (navToggle && navLinks) {
   navToggle.addEventListener("click", () => {
     const expanded = navToggle.getAttribute("aria-expanded") === "true";
-    navToggle.setAttribute("aria-expanded", String(!expanded));
-    navLinks.classList.toggle("open");
-    body.classList.toggle("menu-open");
+    setMobileMenuState(!expanded);
   });
 
   navLinks.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      navToggle.setAttribute("aria-expanded", "false");
-      navLinks.classList.remove("open");
-      body.classList.remove("menu-open");
+      setMobileMenuState(false);
     });
   });
 }
@@ -34,7 +48,7 @@ if (hero) {
 }
 
 const interactiveCards = document.querySelectorAll(
-  ".hero-card, .benefit-card, .service-card, .feature-card, .story-card, .testimonial-card, .team-card, .comparison-card, .cta-card, .authority-profile, .process-panel, .faq-list details"
+  ".hero-stage-panel, .benefit-card, .service-card, .feature-card, .story-card, .testimonial-card, .team-card, .comparison-card, .cta-card, .authority-profile, .process-panel, .faq-list details"
 );
 
 interactiveCards.forEach((card) => {
@@ -111,6 +125,11 @@ const setActiveLink = () => {
     header.classList.toggle("is-scrolled", window.scrollY > 12);
   }
 
+  if (navBar) {
+    navBar.classList.toggle("border-mate-lineStrong", window.scrollY > 16);
+    navBar.classList.toggle("shadow-[0_26px_80px_rgba(0,0,0,0.38)]", window.scrollY > 16);
+  }
+
   let currentId = "";
 
   sections.forEach((section) => {
@@ -138,8 +157,10 @@ const animatePointerGlow = () => {
   pointerCurrentX += (pointerTargetX - pointerCurrentX) * 0.12;
   pointerCurrentY += (pointerTargetY - pointerCurrentY) * 0.12;
 
-  document.documentElement.style.setProperty("--pointer-x", `${pointerCurrentX}%`);
-  document.documentElement.style.setProperty("--pointer-y", `${pointerCurrentY}%`);
+  if (cursorGlow) {
+    cursorGlow.style.left = `${pointerCurrentX}%`;
+    cursorGlow.style.top = `${pointerCurrentY}%`;
+  }
 
   if (Math.abs(pointerTargetX - pointerCurrentX) > 0.02 || Math.abs(pointerTargetY - pointerCurrentY) > 0.02) {
     pointerFrame = window.requestAnimationFrame(animatePointerGlow);
@@ -156,6 +177,16 @@ window.addEventListener(
 
     if (!pointerFrame) {
       pointerFrame = window.requestAnimationFrame(animatePointerGlow);
+    }
+  },
+  { passive: true }
+);
+
+window.addEventListener(
+  "resize",
+  () => {
+    if (window.innerWidth >= 768) {
+      setMobileMenuState(false);
     }
   },
   { passive: true }

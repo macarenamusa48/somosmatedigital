@@ -8,92 +8,112 @@
       name="description"
       content="Automatizacion, integraciones, inteligencia artificial aplicada, analisis de datos y software a medida para pymes."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="output.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <header class="site-header" id="top">
-        <nav class="navbar container" aria-label="Principal">
-          <a class="brand" href="#top" aria-label="Mate Digital">
-            <span class="brand-mark">M/</span>
-            <span class="brand-copy">
-              <strong>Mate Digital</strong>
-              <small>Tu compa&ntilde;ero en la transformacion digital</small>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="page-shell page-noise bg-mate-bg text-mate-text">
+      <div class="pointer-events-none absolute inset-x-[-12%] top-[-10rem] z-0 h-[26rem] rounded-full bg-[radial-gradient(circle,_rgba(191,230,255,0.12),_transparent_68%)] blur-3xl" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute right-[-10%] top-[18rem] z-0 h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,_rgba(120,109,255,0.10),_transparent_72%)] blur-3xl" aria-hidden="true"></div>
+
+      <header class="site-header sticky top-0 z-40 pt-4" id="top">
+        <nav class="container-shell nav-pill glass-surface flex items-center justify-between gap-4 px-4 py-4 md:px-5" aria-label="Principal">
+          <a class="relative z-[1] inline-flex min-w-0 items-center gap-3.5" href="#top" aria-label="Mate Digital">
+            <span class="grid h-12 w-12 place-items-center rounded-[1.15rem] border border-mate-line bg-white/[0.03] bg-panel-sheen font-display text-base font-bold tracking-[-0.05em] shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">M/</span>
+            <span class="flex flex-col gap-0.5">
+              <strong class="font-display text-base tracking-[-0.03em]">Mate Digital</strong>
+              <small class="text-[0.72rem] text-mate-muted">Tu compa&ntilde;ero en la transformacion digital</small>
             </span>
           </a>
-          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <button class="nav-toggle relative z-[1] grid h-12 w-12 place-items-center rounded-[1.15rem] border border-mate-line bg-white/[0.03] shadow-[0_18px_38px_rgba(0,0,0,0.24)] md:hidden" type="button" aria-expanded="false" aria-controls="nav-links">
             <span></span>
             <span></span>
           </button>
-          <div class="nav-links" id="nav-links">
-            <a href="#servicios">Servicios</a>
-            <a href="#proceso">Proceso</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contacto">Contacto</a>
-            <a class="button button-primary nav-cta" href="#contacto">Conversemos</a>
+          <div class="nav-links pointer-events-none absolute left-3 right-3 top-[calc(100%+0.75rem)] z-[1] flex origin-top -translate-y-2 flex-col gap-3 rounded-[1.5rem] border border-mate-line bg-[rgba(7,10,15,0.92)] p-4 opacity-0 shadow-halo backdrop-blur-2xl transition duration-300 md:pointer-events-auto md:static md:flex md:translate-y-0 md:flex-row md:items-center md:gap-5 md:border-0 md:bg-transparent md:p-0 md:opacity-100 md:shadow-none md:backdrop-blur-0" id="nav-links">
+            <a class="relative text-[0.94rem] text-mate-muted transition after:absolute after:bottom-[-0.4rem] after:left-0 after:right-0 after:h-px after:origin-center after:scale-x-50 after:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.55),transparent)] after:opacity-0 after:transition hover:text-mate-text hover:after:scale-x-100 hover:after:opacity-100 focus-visible:text-mate-text focus-visible:after:scale-x-100 focus-visible:after:opacity-100" href="#servicios">Servicios</a>
+            <a class="relative text-[0.94rem] text-mate-muted transition after:absolute after:bottom-[-0.4rem] after:left-0 after:right-0 after:h-px after:origin-center after:scale-x-50 after:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.55),transparent)] after:opacity-0 after:transition hover:text-mate-text hover:after:scale-x-100 hover:after:opacity-100 focus-visible:text-mate-text focus-visible:after:scale-x-100 focus-visible:after:opacity-100" href="#proceso">Proceso</a>
+            <a class="relative text-[0.94rem] text-mate-muted transition after:absolute after:bottom-[-0.4rem] after:left-0 after:right-0 after:h-px after:origin-center after:scale-x-50 after:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.55),transparent)] after:opacity-0 after:transition hover:text-mate-text hover:after:scale-x-100 hover:after:opacity-100 focus-visible:text-mate-text focus-visible:after:scale-x-100 focus-visible:after:opacity-100" href="#faq">FAQ</a>
+            <a class="relative text-[0.94rem] text-mate-muted transition after:absolute after:bottom-[-0.4rem] after:left-0 after:right-0 after:h-px after:origin-center after:scale-x-50 after:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.55),transparent)] after:opacity-0 after:transition hover:text-mate-text hover:after:scale-x-100 hover:after:opacity-100 focus-visible:text-mate-text focus-visible:after:scale-x-100 focus-visible:after:opacity-100" href="#contacto">Contacto</a>
+            <a class="button button-primary nav-cta px-5" href="#contacto">Conversemos</a>
           </div>
         </nav>
       </header>
 
       <main>
-        <section class="hero section">
-          <div class="section-vector vector-orbit" aria-hidden="true"></div>
-          <div class="section-vector vector-grid" aria-hidden="true"></div>
-          <div class="container hero-inner">
-            <div class="hero-copy reveal">
-              <span class="eyebrow">Siempre con codigo, nunca con humo</span>
-              <h1>Automatizamos lo operativo para que puedas enfocarte en lo estrategico.</h1>
-              <p class="hero-lead">
+        <section class="hero section overflow-hidden pb-20 pt-16 md:min-h-[min(100svh,980px)] md:pt-24">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(255,255,255,0.05),transparent_20%),radial-gradient(circle_at_72%_18%,rgba(191,230,255,0.16),transparent_22%),radial-gradient(circle_at_82%_28%,rgba(120,109,255,0.12),transparent_24%)] opacity-90" aria-hidden="true"></div>
+          <div class="absolute inset-x-0 top-0 h-[34rem] animate-aurora bg-hero-radial" aria-hidden="true"></div>
+          <div class="absolute left-[-8rem] top-[6rem] h-[16rem] w-[16rem] rounded-full bg-[radial-gradient(circle,_rgba(191,230,255,0.14),_transparent_72%)] blur-3xl animate-pulse-glow" aria-hidden="true"></div>
+          <div class="absolute right-[-4rem] top-[10rem] h-[18rem] w-[18rem] rounded-full bg-[radial-gradient(circle,_rgba(120,109,255,0.12),_transparent_72%)] blur-3xl animate-float-slow" aria-hidden="true"></div>
+          <div class="hero-grid-plane absolute inset-x-0 bottom-[-18%] h-[58%]" aria-hidden="true"></div>
+          <div class="vector-grid absolute right-0 top-8 h-[16rem] w-[18rem] animate-grid-drift opacity-20" aria-hidden="true"></div>
+
+          <div class="container-shell relative z-[1] grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.02fr)]">
+            <div class="hero-copy reveal reveal-base max-w-[39rem]">
+              <span class="eyebrow eyebrow-dot">Siempre con codigo, nunca con humo</span>
+              <h1 class="mt-5 max-w-[11ch] font-display text-[clamp(3.1rem,6vw,5.8rem)] font-bold leading-[0.9] tracking-[-0.075em] text-balance drop-shadow-[0_18px_36px_rgba(0,0,0,0.34)]">Automatizamos lo operativo para que puedas enfocarte en lo estrategico.</h1>
+              <p class="mt-6 max-w-[36rem] text-[1rem] leading-8 text-mate-muted md:text-[1.04rem]">
                 Creamos automatizaciones, integraciones, analitica e IA aplicada para pymes que necesitan eficiencia real, no discursos vacios.
               </p>
-              <div class="hero-actions">
-                <a class="button button-primary" href="#contacto">Quiero optimizar mi negocio</a>
-                <a class="button button-secondary" href="#servicios">Ver servicios</a>
+              <div class="mt-8 flex flex-wrap gap-4">
+                <a class="button button-primary px-6" href="#contacto">Quiero optimizar mi negocio</a>
+                <a class="button button-secondary px-6" href="#servicios">Ver servicios</a>
               </div>
-              <ul class="hero-points" aria-label="Diferenciales">
+              <ul class="mt-8 flex list-none flex-wrap gap-3 p-0" aria-label="Diferenciales">
                 <li>Procesos mas simples</li>
                 <li>Datos mas utiles</li>
                 <li>Implementacion cercana</li>
               </ul>
             </div>
 
-            <div class="hero-panel reveal">
-              <div class="hero-card signal-card">
+            <div class="hero-stage reveal reveal-base grid gap-4 lg:grid-cols-[1.08fr_0.92fr]">
+              <div class="hero-stage-panel card-premium signal-card flex min-h-[17rem] flex-col justify-between bg-mate-surface/90 p-7 lg:row-span-2 lg:min-h-[23rem]">
                 <span class="card-kicker">Operacion</span>
-                <div class="metric-row">
+                <div class="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <strong>73%</strong>
-                    <span>menos carga manual</span>
+                    <strong class="block font-display text-[2.55rem] leading-none tracking-[-0.06em]">73%</strong>
+                    <span class="mt-2 block text-sm text-mate-muted">menos carga manual</span>
                   </div>
                   <div>
-                    <strong>24/7</strong>
-                    <span>flujos activos</span>
+                    <strong class="block font-display text-[2.55rem] leading-none tracking-[-0.06em]">24/7</strong>
+                    <span class="mt-2 block text-sm text-mate-muted">flujos activos</span>
                   </div>
                 </div>
-                <p>
+                <div class="micro-panel mt-6 flex items-end gap-3 p-5" aria-hidden="true">
+                  <span class="h-10 w-6 rounded-full bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(191,230,255,0.2))]"></span>
+                  <span class="h-16 w-6 rounded-full bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(120,109,255,0.22))]"></span>
+                  <span class="h-12 w-6 rounded-full bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(191,230,255,0.18))]"></span>
+                  <span class="h-20 w-6 rounded-full bg-[linear-gradient(180deg,rgba(255,255,255,0.1),rgba(191,230,255,0.28))]"></span>
+                  <span class="h-14 w-6 rounded-full bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(120,109,255,0.2))]"></span>
+                </div>
+                <p class="mt-6 text-[0.98rem] leading-7 text-mate-muted">
                   Disenamos sistemas que conectan datos, personas y software para que el trabajo repetitivo deje de frenar el crecimiento.
                 </p>
               </div>
-              <div class="hero-card dialogue-card">
+
+              <div class="hero-stage-panel card-premium dialogue-card flex flex-col gap-4 bg-mate-surface/90 p-7">
                 <span class="card-kicker">Escenario real</span>
-                <div class="chat-line">
-                  <span class="chat-author">Pyme</span>
-                  <p>Tenemos datos en Excel, correos y sistemas que no se hablan entre si.</p>
+                <div class="micro-panel space-y-2 p-4">
+                  <span class="block text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[rgba(231,235,242,0.58)]">Pyme</span>
+                  <p class="m-0 text-sm leading-6 text-[rgba(231,235,242,0.84)]">Tenemos datos en Excel, correos y sistemas que no se hablan entre si.</p>
                 </div>
-                <div class="chat-line accent">
-                  <span class="chat-author">Mate Digital</span>
-                  <p>Los conectamos, automatizamos las tareas repetitivas y dejamos reportes claros para decidir mejor.</p>
+                <div class="micro-panel border-[rgba(191,230,255,0.1)] bg-[linear-gradient(180deg,rgba(191,230,255,0.08),rgba(17,20,24,0.68))] p-4">
+                  <span class="block text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[rgba(231,235,242,0.58)]">Mate Digital</span>
+                  <p class="m-0 mt-2 text-sm leading-6 text-[rgba(231,235,242,0.84)]">Los conectamos, automatizamos las tareas repetitivas y dejamos reportes claros para decidir mejor.</p>
+                </div>
+                <div class="flex items-center justify-between gap-2 rounded-[1.15rem] border border-white/[0.08] bg-white/[0.025] p-3 text-[0.76rem] font-medium text-[rgba(231,235,242,0.72)]" aria-hidden="true">
+                  <span class="rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-2">Excel</span>
+                  <i class="h-px flex-1 bg-[linear-gradient(90deg,rgba(255,255,255,0.08),rgba(191,230,255,0.25),rgba(255,255,255,0.08))]"></i>
+                  <span class="rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-2">API</span>
+                  <i class="h-px flex-1 bg-[linear-gradient(90deg,rgba(255,255,255,0.08),rgba(191,230,255,0.25),rgba(255,255,255,0.08))]"></i>
+                  <span class="rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-2">Reporte</span>
                 </div>
               </div>
-              <div class="hero-card code-card">
+
+              <div class="hero-stage-panel card-premium code-card relative overflow-hidden bg-mate-surface/90 p-7">
+                <div class="absolute right-5 top-5 h-14 w-14 rounded-2xl border border-white/[0.08] bg-[radial-gradient(circle,_rgba(191,230,255,0.16),_transparent_72%)] blur-2xl" aria-hidden="true"></div>
                 <span class="card-kicker">Implementacion</span>
-                <pre><code>if (tarea.manual && tarea.repetitiva) {
+                <pre class="m-0 mt-5 overflow-x-auto rounded-[1.15rem] border border-white/[0.08] bg-[#07090e] p-4 text-[0.82rem] leading-7 text-[#dbeaff] shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]"><code>if (tarea.manual && tarea.repetitiva) {
   automatizar(tarea);
 }
 
@@ -116,11 +136,16 @@ if (dato.disperso) {
                 Entonces elegimos otro camino: trabajar con metodo, foco y responsabilidad para resolver problemas concretos con tecnologia bien aplicada.
               </p>
             </div>
-            <aside class="authority-profile reveal">
+            <aside class="authority-profile card-premium reveal">
               <div class="profile-avatar">MD</div>
               <div>
                 <strong>Mate Digital</strong>
                 <p>Equipo de profesionales enfocado en procesos, datos, software e implementaciones que aportan valor desde el primer paso.</p>
+              </div>
+              <div class="profile-signal" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
               </div>
             </aside>
           </div>
@@ -128,21 +153,36 @@ if (dato.disperso) {
 
         <section class="benefits section">
           <div class="container">
-            <div class="section-heading reveal">
-              <span class="eyebrow">Por que Mate Digital</span>
+            <div class="section-heading reveal reveal-base">
+              <span class="eyebrow eyebrow-dot">Por que Mate Digital</span>
               <h2>No venimos a cambiar tu negocio. Venimos a hacerlo mas eficiente.</h2>
               <p>Trabajamos sobre la operacion real de tu empresa para mejorar tiempos, reducir errores y ordenar la informacion que hoy se dispersa.</p>
             </div>
             <div class="benefit-grid">
-              <article class="benefit-card reveal">
+              <article class="benefit-card card-premium reveal reveal-base p-7 md:p-8">
+                <div class="benefit-visual metric-visual" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
                 <h3>Resultados reales</h3>
                 <p>No hablamos de innovacion constante. Priorizamos mejoras visibles en tiempos, orden operativo y calidad de la informacion.</p>
               </article>
-              <article class="benefit-card reveal">
+              <article class="benefit-card card-premium reveal reveal-base p-7 md:p-8">
+                <div class="benefit-visual pulse-visual" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
                 <h3>Valor antes que moda</h3>
                 <p>No vendemos tecnologia por tendencia. Implementamos solo lo que aporta impacto concreto a tu negocio.</p>
               </article>
-              <article class="benefit-card reveal">
+              <article class="benefit-card card-premium reveal reveal-base p-7 md:p-8">
+                <div class="benefit-visual workflow-visual" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
                 <h3>Metodo con cercania</h3>
                 <p>Trabajamos con procesos, datos y software, siempre de forma clara, cercana y bien implementada.</p>
               </article>
@@ -151,53 +191,106 @@ if (dato.disperso) {
         </section>
 
         <section class="services section" id="servicios">
-          <div class="section-vector vector-wave" aria-hidden="true"></div>
+          <div class="pointer-events-none absolute inset-x-0 top-12 z-0 h-[16rem] bg-[radial-gradient(circle_at_55%_50%,rgba(191,230,255,0.08),transparent_34%)] blur-3xl" aria-hidden="true"></div>
           <div class="container">
-            <div class="section-heading reveal">
-              <span class="eyebrow">Servicios</span>
+            <div class="section-heading reveal reveal-base">
+              <span class="eyebrow eyebrow-dot">Servicios</span>
               <h2>Soluciones concretas para operaciones que necesitan orden, velocidad y control.</h2>
               <p>Cada servicio esta pensado para una pyme que quiere dejar de depender de tareas manuales y ganar claridad para crecer.</p>
             </div>
-            <div class="services-grid">
-              <article class="service-card service-card-large service-automation reveal">
-                <span class="service-icon" aria-hidden="true"></span>
-                <span class="card-kicker">Automatizacion</span>
-                <h3>Automatizacion de procesos</h3>
-                <p>Eliminamos tareas manuales y repetitivas con bots y flujos que ejecutan procesos con precision, sin errores y sin depender de personas.</p>
+            <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-12">
+              <article class="service-card service-card-large service-automation card-premium reveal reveal-base flex flex-col justify-between p-7 md:p-8 xl:col-span-6 xl:min-h-[22rem]">
+                <div class="service-visual automation-visual grid gap-4 md:grid-cols-[0.9fr_1.1fr]" aria-hidden="true">
+                  <div class="micro-panel space-y-4 p-4">
+                    <span class="block h-2.5 w-16 rounded-full bg-white/[0.08]"></span>
+                    <div class="space-y-2">
+                      <span class="block h-2 rounded-full bg-white/[0.06]"></span>
+                      <span class="block h-2 w-[78%] rounded-full bg-white/[0.06]"></span>
+                      <span class="block h-2 w-[56%] rounded-full bg-white/[0.06]"></span>
+                    </div>
+                  </div>
+                  <div class="micro-panel flex items-center justify-between gap-3 p-4 text-[0.78rem] font-medium text-[rgba(231,235,242,0.72)]">
+                    <span class="rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-2">Manual</span>
+                    <i class="h-px flex-1 bg-[linear-gradient(90deg,rgba(255,255,255,0.08),rgba(191,230,255,0.25),rgba(255,255,255,0.08))]"></i>
+                    <span class="rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-2">Automatico</span>
+                  </div>
+                </div>
+                <div class="mt-8">
+                  <span class="card-kicker">Automatizacion</span>
+                  <h3 class="mb-3 mt-4 font-display text-[1.5rem] leading-[1.02] tracking-[-0.05em]">Automatizacion de procesos</h3>
+                  <p class="max-w-[35rem] text-[0.98rem] leading-7 text-mate-muted">Eliminamos tareas manuales y repetitivas con bots y flujos que ejecutan procesos con precision, sin errores y sin depender de personas.</p>
+                </div>
               </article>
-              <article class="service-card service-integrations reveal">
-                <span class="service-icon" aria-hidden="true"></span>
+
+              <article class="service-card service-integrations card-premium reveal reveal-base p-7 md:p-8 xl:col-span-3">
+                <div class="service-visual integrations-visual grid grid-cols-2 gap-3" aria-hidden="true">
+                  <span class="micro-panel grid h-14 place-items-center text-sm font-medium text-[rgba(231,235,242,0.72)]">ERP</span>
+                  <span class="micro-panel grid h-14 place-items-center text-sm font-medium text-[rgba(231,235,242,0.72)]">Mail</span>
+                  <span class="micro-panel grid h-14 place-items-center text-sm font-medium text-[rgba(231,235,242,0.72)]">Excel</span>
+                  <span class="micro-panel grid h-14 place-items-center text-sm font-medium text-[rgba(231,235,242,0.72)]">CRM</span>
+                </div>
                 <span class="card-kicker">Integraciones</span>
-                <h3>Sistemas conectados</h3>
-                <p>APIs, Excel, correo, CRMs o ERPs trabajando en conjunto para que la informacion fluya sin intervencion manual.</p>
+                <h3 class="mb-3 mt-4 font-display text-[1.34rem] leading-[1.04] tracking-[-0.04em]">Sistemas conectados</h3>
+                <p class="text-[0.98rem] leading-7 text-mate-muted">APIs, Excel, correo, CRMs o ERPs trabajando en conjunto para que la informacion fluya sin intervencion manual.</p>
               </article>
-              <article class="service-card service-ai reveal">
-                <span class="service-icon" aria-hidden="true"></span>
+
+              <article class="service-card service-ai card-premium reveal reveal-base p-7 md:p-8 xl:col-span-3">
+                <div class="service-visual ai-visual relative grid min-h-[8rem] place-items-center overflow-hidden rounded-[1.25rem] border border-white/[0.08] bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))]" aria-hidden="true">
+                  <div class="absolute h-24 w-24 rounded-full border border-white/[0.08]"></div>
+                  <div class="absolute h-32 w-32 rounded-full border border-[rgba(191,230,255,0.14)] animate-float-slow"></div>
+                  <div class="h-4 w-4 rounded-full bg-[rgba(191,230,255,0.72)] shadow-[0_0_18px_rgba(191,230,255,0.4)]"></div>
+                  <div class="absolute left-1/2 top-5 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-white/[0.34]"></div>
+                  <div class="absolute bottom-5 left-8 h-2.5 w-2.5 rounded-full bg-white/[0.22]"></div>
+                  <div class="absolute bottom-6 right-8 h-2.5 w-2.5 rounded-full bg-[rgba(120,109,255,0.32)]"></div>
+                </div>
                 <span class="card-kicker">IA aplicada</span>
-                <h3>Inteligencia artificial con sentido</h3>
-                <ul>
+                <h3 class="mb-3 mt-4 font-display text-[1.34rem] leading-[1.04] tracking-[-0.04em]">Inteligencia artificial con sentido</h3>
+                <ul class="space-y-2 pl-5 text-[0.98rem] leading-7 text-mate-muted">
                   <li>Extraccion de datos de documentos</li>
                   <li>Clasificacion y analisis de informacion</li>
                   <li>Automatizacion de decisiones simples</li>
                 </ul>
               </article>
-              <article class="service-card service-data reveal">
-                <span class="service-icon" aria-hidden="true"></span>
+
+              <article class="service-card service-data card-premium reveal reveal-base p-7 md:p-8 xl:col-span-3">
+                <div class="service-visual data-visual micro-panel flex items-end gap-3 p-4" aria-hidden="true">
+                  <span class="h-8 w-7 rounded-full bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.18))]"></span>
+                  <span class="h-14 w-7 rounded-full bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(191,230,255,0.2))]"></span>
+                  <span class="h-20 w-7 rounded-full bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(120,109,255,0.22))]"></span>
+                  <span class="h-12 w-7 rounded-full bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(191,230,255,0.16))]"></span>
+                </div>
                 <span class="card-kicker">Datos</span>
-                <h3>Analisis y reportes</h3>
-                <p>Convertimos datos en informacion util con dashboards, metricas claras y reportes automaticos para decidir mejor.</p>
+                <h3 class="mb-3 mt-4 font-display text-[1.34rem] leading-[1.04] tracking-[-0.04em]">Analisis y reportes</h3>
+                <p class="text-[0.98rem] leading-7 text-mate-muted">Convertimos datos en informacion util con dashboards, metricas claras y reportes automaticos para decidir mejor.</p>
               </article>
-              <article class="service-card service-card-wide service-software reveal">
-                <span class="service-icon" aria-hidden="true"></span>
+
+              <article class="service-card service-card-wide service-software card-premium reveal reveal-base p-7 md:p-8 xl:col-span-5">
+                <div class="service-visual software-visual grid gap-4 md:grid-cols-[0.8fr_1.2fr]" aria-hidden="true">
+                  <div class="micro-panel flex items-center gap-2 p-4">
+                    <span class="h-2.5 w-2.5 rounded-full bg-white/[0.22]"></span>
+                    <span class="h-2.5 w-2.5 rounded-full bg-white/[0.18]"></span>
+                    <span class="h-2.5 w-2.5 rounded-full bg-white/[0.14]"></span>
+                  </div>
+                  <div class="micro-panel space-y-2 p-4">
+                    <span class="block h-2 rounded-full bg-white/[0.08]"></span>
+                    <span class="block h-2 w-[84%] rounded-full bg-[rgba(191,230,255,0.14)]"></span>
+                    <span class="block h-2 w-[66%] rounded-full bg-white/[0.08]"></span>
+                  </div>
+                </div>
                 <span class="card-kicker">Software a medida</span>
-                <h3>Herramientas simples adaptadas a tu operacion</h3>
-                <p>Creamos soluciones que encajan con tu manera de trabajar, sin sumar complejidad innecesaria.</p>
+                <h3 class="mb-3 mt-4 font-display text-[1.34rem] leading-[1.04] tracking-[-0.04em]">Herramientas simples adaptadas a tu operacion</h3>
+                <p class="text-[0.98rem] leading-7 text-mate-muted">Creamos soluciones que encajan con tu manera de trabajar, sin sumar complejidad innecesaria.</p>
               </article>
-              <article class="service-card service-transformation reveal">
-                <span class="service-icon" aria-hidden="true"></span>
+
+              <article class="service-card service-transformation card-premium reveal reveal-base p-7 md:p-8 xl:col-span-4">
+                <div class="service-visual transformation-visual flex gap-3" aria-hidden="true">
+                  <div class="micro-panel grid h-16 w-16 place-items-center text-sm font-semibold text-[rgba(231,235,242,0.72)]">01</div>
+                  <div class="micro-panel grid h-16 w-16 place-items-center text-sm font-semibold text-[rgba(231,235,242,0.72)]">02</div>
+                  <div class="micro-panel grid h-16 w-16 place-items-center text-sm font-semibold text-[rgba(231,235,242,0.72)]">03</div>
+                </div>
                 <span class="card-kicker">Transformacion digital</span>
-                <h3>De lo manual a lo automatico, paso a paso</h3>
-                <p>Identificamos que automatizar, como hacerlo y lo implementamos con vos.</p>
+                <h3 class="mb-3 mt-4 font-display text-[1.34rem] leading-[1.04] tracking-[-0.04em]">De lo manual a lo automatico, paso a paso</h3>
+                <p class="text-[0.98rem] leading-7 text-mate-muted">Identificamos que automatizar, como hacerlo y lo implementamos con vos.</p>
               </article>
             </div>
           </div>
@@ -210,12 +303,36 @@ if (dato.disperso) {
               <h2>Todo lo que hace falta para bajar complejidad operativa.</h2>
             </div>
             <div class="feature-grid">
-              <article class="feature-card reveal"><h3>Workflows automatizados</h3><p>Secuencias que ejecutan tareas repetitivas sin friccion.</p></article>
-              <article class="feature-card reveal"><h3>Integraciones utiles</h3><p>Conectamos herramientas existentes antes de sumar otras nuevas.</p></article>
-              <article class="feature-card reveal"><h3>Dashboards accionables</h3><p>Visualizacion clara para seguimiento operativo y comercial.</p></article>
-              <article class="feature-card reveal"><h3>IA aplicada</h3><p>Uso concreto en clasificacion, extraccion y apoyo a decisiones.</p></article>
-              <article class="feature-card reveal"><h3>Software simple</h3><p>Desarrollo a medida enfocado en procesos y adopcion real.</p></article>
-              <article class="feature-card reveal"><h3>Acompanamiento cercano</h3><p>Implementaciones con foco, metodo y seguimiento.</p></article>
+              <article class="feature-card card-premium reveal rounded-[28px] p-7">
+                <div class="feature-visual lines-visual" aria-hidden="true"><span></span><span></span><span></span></div>
+                <h3>Workflows automatizados</h3>
+                <p>Secuencias que ejecutan tareas repetitivas sin friccion.</p>
+              </article>
+              <article class="feature-card card-premium reveal rounded-[28px] p-7">
+                <div class="feature-visual nodes-visual" aria-hidden="true"><span></span><span></span><span></span></div>
+                <h3>Integraciones utiles</h3>
+                <p>Conectamos herramientas existentes antes de sumar otras nuevas.</p>
+              </article>
+              <article class="feature-card card-premium reveal rounded-[28px] p-7">
+                <div class="feature-visual chart-visual" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+                <h3>Dashboards accionables</h3>
+                <p>Visualizacion clara para seguimiento operativo y comercial.</p>
+              </article>
+              <article class="feature-card card-premium reveal rounded-[28px] p-7">
+                <div class="feature-visual rings-visual" aria-hidden="true"><span></span><span></span><span></span></div>
+                <h3>IA aplicada</h3>
+                <p>Uso concreto en clasificacion, extraccion y apoyo a decisiones.</p>
+              </article>
+              <article class="feature-card card-premium reveal rounded-[28px] p-7">
+                <div class="feature-visual panel-visual" aria-hidden="true"><span></span><span></span></div>
+                <h3>Software simple</h3>
+                <p>Desarrollo a medida enfocado en procesos y adopcion real.</p>
+              </article>
+              <article class="feature-card card-premium reveal rounded-[28px] p-7">
+                <div class="feature-visual pulse-visual small" aria-hidden="true"><span></span><span></span><span></span></div>
+                <h3>Acompanamiento cercano</h3>
+                <p>Implementaciones con foco, metodo y seguimiento.</p>
+              </article>
             </div>
           </div>
         </section>
@@ -228,7 +345,7 @@ if (dato.disperso) {
               <h2>Un camino simple para transformar sin romper lo que ya funciona.</h2>
               <p>Priorizamos implementaciones claras y progresivas, con entregables visibles en cada etapa.</p>
             </div>
-            <div class="process-panel reveal">
+            <div class="process-panel card-premium reveal rounded-[28px] p-7">
               <div class="process-tabs" role="tablist" aria-label="Proceso de trabajo">
                 <button class="process-tab active" type="button" role="tab" aria-selected="true" data-step="1">Paso 1</button>
                 <button class="process-tab" type="button" role="tab" aria-selected="false" data-step="2">Paso 2</button>
@@ -236,16 +353,19 @@ if (dato.disperso) {
               </div>
               <article class="process-step active" data-step-panel="1">
                 <span>01</span>
+                <div class="process-track" aria-hidden="true"><i></i><i></i><i></i></div>
                 <h3>Detectamos fricciones reales</h3>
                 <p>Revisamos tareas repetitivas, cuellos de botella, datos dispersos y puntos donde tu equipo pierde tiempo.</p>
               </article>
               <article class="process-step" data-step-panel="2" hidden>
                 <span>02</span>
+                <div class="process-track" aria-hidden="true"><i></i><i></i><i></i></div>
                 <h3>Disenamos una solucion viable</h3>
                 <p>Definimos que conviene automatizar, integrar o desarrollar para lograr impacto rapido sin agregar complejidad.</p>
               </article>
               <article class="process-step" data-step-panel="3" hidden>
                 <span>03</span>
+                <div class="process-track" aria-hidden="true"><i></i><i></i><i></i></div>
                 <h3>Implementamos y medimos</h3>
                 <p>Ponemos en marcha los flujos, dejamos la operacion ordenada y medimos resultados para seguir mejorando.</p>
               </article>
@@ -260,17 +380,20 @@ if (dato.disperso) {
               <h2>Casos tipo que muestran lo que cambia cuando la operacion deja de depender de lo manual.</h2>
             </div>
             <div class="story-grid">
-              <article class="story-card reveal">
+              <article class="story-card card-premium reveal rounded-[28px] p-7">
+                <div class="story-glow" aria-hidden="true"></div>
                 <strong>48%</strong>
                 <h3>Menos tiempo en tareas administrativas</h3>
                 <p>Automatizaciones que absorben cargas repetitivas y liberan al equipo para tareas de mayor valor.</p>
               </article>
-              <article class="story-card reveal">
+              <article class="story-card card-premium reveal rounded-[28px] p-7">
+                <div class="story-glow" aria-hidden="true"></div>
                 <strong>3x</strong>
                 <h3>Mas velocidad para acceder a informacion</h3>
                 <p>Integraciones y reportes automaticos para decidir con datos claros, no con intuiciones sueltas.</p>
               </article>
-              <article class="story-card reveal">
+              <article class="story-card card-premium reveal rounded-[28px] p-7">
+                <div class="story-glow" aria-hidden="true"></div>
                 <strong>0</strong>
                 <h3>Reproceso innecesario</h3>
                 <p>Cuando los sistemas se conectan, la informacion no se vuelve a cargar ni se pierde entre planillas.</p>
@@ -286,15 +409,18 @@ if (dato.disperso) {
               <h2>Una forma de trabajar pensada para empresas que quieren claridad.</h2>
             </div>
             <div class="testimonial-grid">
-              <article class="testimonial-card reveal">
+              <article class="testimonial-card card-premium reveal rounded-[28px] p-7">
+                <div class="quote-mark" aria-hidden="true">"</div>
                 <p>"Mate Digital baja la tecnologia a tierra y la convierte en una mejora concreta."</p>
                 <span>Enfoque practico</span>
               </article>
-              <article class="testimonial-card reveal">
+              <article class="testimonial-card card-premium reveal rounded-[28px] p-7">
+                <div class="quote-mark" aria-hidden="true">"</div>
                 <p>"No vienen con humo ni con promesas imposibles. Vienen con metodo."</p>
                 <span>Implementacion responsable</span>
               </article>
-              <article class="testimonial-card reveal">
+              <article class="testimonial-card card-premium reveal rounded-[28px] p-7">
+                <div class="quote-mark" aria-hidden="true">"</div>
                 <p>"Cada solucion esta pensada para operar mejor, no para complicar mas."</p>
                 <span>Valor real</span>
               </article>
@@ -311,19 +437,19 @@ if (dato.disperso) {
               <a class="button button-primary" href="#contacto">Hablar de mi operacion</a>
             </div>
             <div class="faq-list reveal">
-              <details open>
+              <details class="card-premium rounded-[28px] p-7" open>
                 <summary>Trabajan solo con pymes?</summary>
                 <p>Si, el enfoque principal esta pensado para pymes que necesitan ordenar operacion y escalar sin sumar complejidad innecesaria.</p>
               </details>
-              <details>
+              <details class="card-premium rounded-[28px] p-7">
                 <summary>Necesito tener sistemas modernos para empezar?</summary>
                 <p>No. Podemos trabajar sobre herramientas existentes como Excel, correo, ERPs o sistemas ya implementados.</p>
               </details>
-              <details>
+              <details class="card-premium rounded-[28px] p-7">
                 <summary>La inteligencia artificial es obligatoria?</summary>
                 <p>No. La usamos solo donde aporta valor concreto. Si una automatizacion clasica resuelve mejor, vamos por ahi.</p>
               </details>
-              <details>
+              <details class="card-premium rounded-[28px] p-7">
                 <summary>Como definen que conviene automatizar?</summary>
                 <p>Analizamos tiempo invertido, errores recurrentes, dependencia manual y potencial de mejora real.</p>
               </details>
@@ -332,7 +458,7 @@ if (dato.disperso) {
         </section>
 
         <section class="comparison section">
-          <div class="container comparison-card reveal">
+          <div class="container-shell comparison-card card-premium reveal rounded-[32px] p-8">
             <span class="eyebrow">Nuestro enfoque</span>
             <h2>Tecnologia aplicada con sentido.</h2>
             <div class="comparison-grid">
@@ -363,17 +489,17 @@ if (dato.disperso) {
               <h2>Profesionales organizados para implementar con cercania, metodo y responsabilidad.</h2>
             </div>
             <div class="team-grid">
-              <article class="team-card reveal">
+              <article class="team-card card-premium reveal rounded-[28px] p-7">
                 <div class="team-avatar">OP</div>
                 <h3>Operacion</h3>
                 <p>Le damos forma a procesos mas simples, claros y escalables.</p>
               </article>
-              <article class="team-card reveal">
+              <article class="team-card card-premium reveal rounded-[28px] p-7">
                 <div class="team-avatar">DT</div>
                 <h3>Datos y tecnologia</h3>
                 <p>Integramos sistemas, automatizamos flujos y armamos informacion accionable.</p>
               </article>
-              <article class="team-card reveal">
+              <article class="team-card card-premium reveal rounded-[28px] p-7">
                 <div class="team-avatar">IA</div>
                 <h3>IA aplicada</h3>
                 <p>Usamos modelos y automatizaciones donde realmente generan valor operativo.</p>
@@ -384,7 +510,7 @@ if (dato.disperso) {
 
         <section class="cta section" id="contacto">
           <div class="section-vector vector-grid vector-grid-bottom" aria-hidden="true"></div>
-          <div class="container cta-card reveal">
+          <div class="container-shell cta-card card-premium reveal rounded-[32px] p-8">
             <span class="eyebrow">Contacto</span>
             <h2>Tu compa&ntilde;ero en la transformacion digital.</h2>
             <p>Si queres dejar atras tareas manuales, ordenar datos y construir una operacion mas eficiente, conversemos.</p>
