@@ -222,6 +222,25 @@ async function generateUiProposal(prompt) {
   return improvedUI;
 }
 
+function getProjectComponents() {
+  return [
+    "header / navbar",
+    "hero section",
+    "authority section",
+    "benefits grid",
+    "services section",
+    "features grid",
+    "process section",
+    "stories section",
+    "testimonials section",
+    "faq section",
+    "comparison section",
+    "team section",
+    "final cta",
+    "footer",
+  ];
+}
+
 const server = new McpServer(
   {
     name: "mate-digital-mcp",
@@ -367,6 +386,17 @@ server.registerTool(
   async ({ prompt }) => {
     const improvedUI = await generateUiProposal(prompt);
     return toTextResult(JSON.stringify(improvedUI, null, 2));
+  }
+);
+
+server.registerTool(
+  "get-components",
+  {
+    title: "Obtener componentes",
+    description: "Devuelve los componentes o secciones principales disponibles en la landing actual.",
+  },
+  async () => {
+    return toTextResult(JSON.stringify(getProjectComponents(), null, 2));
   }
 );
 

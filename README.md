@@ -40,4 +40,5 @@ npm run mcp:server
 - herramienta `search_project_text`
 - herramienta `analyze-ui`
 - herramienta `generate-ui`
+- herramienta `get-components`
 - prompt `review-section`
