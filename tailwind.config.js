@@ -58,6 +58,15 @@ module.exports = {
           "0%, 100%": { opacity: "0.48", transform: "scale(1)" },
           "50%": { opacity: "0.78", transform: "scale(1.06)" },
         },
+        particleFloat: {
+          "0%, 100%": { transform: "translate3d(0,0,0)", opacity: "0.2" },
+          "35%": { transform: "translate3d(10px,-14px,0)", opacity: "0.72" },
+          "70%": { transform: "translate3d(-6px,10px,0)", opacity: "0.38" },
+        },
+        energyWave: {
+          "0%, 100%": { transform: "translate3d(-3%,0,0) scale(1)", opacity: "0.3" },
+          "50%": { transform: "translate3d(3%,0,0) scale(1.08)", opacity: "0.72" },
+        },
       },
       animation: {
         aurora: "aurora 18s ease-in-out infinite",
@@ -65,6 +74,8 @@ module.exports = {
         "grid-drift": "gridDrift 15s linear infinite",
         "float-slow": "floatSlow 9s ease-in-out infinite",
         "pulse-glow": "pulseGlow 5s ease-in-out infinite",
+        "particle-float": "particleFloat 11s ease-in-out infinite",
+        "energy-wave": "energyWave 14s ease-in-out infinite",
       },
     },
   },

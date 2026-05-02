@@ -47,6 +47,72 @@ if (hero) {
   });
 }
 
+const codeTypingBlocks = document.querySelectorAll(".code-typing");
+
+const typeCodeBlock = (block) => {
+  if (!block || block.dataset.typed === "true") {
+    return;
+  }
+
+  const code = block.querySelector("code");
+  if (!code) {
+    return;
+  }
+
+  let lines = [];
+
+  try {
+    lines = JSON.parse(block.dataset.codeLines || "[]");
+  } catch {
+    lines = [];
+  }
+
+  if (!lines.length) {
+    return;
+  }
+
+  block.dataset.typed = "true";
+  code.textContent = "";
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (reducedMotion) {
+    code.textContent = lines.join("\n");
+    return;
+  }
+
+  let lineIndex = 0;
+  let charIndex = 0;
+
+  const typeNextCharacter = () => {
+    const currentLine = lines[lineIndex];
+
+    if (currentLine === undefined) {
+      return;
+    }
+
+    code.textContent = lines
+      .slice(0, lineIndex)
+      .join("\n")
+      .concat(lineIndex > 0 ? "\n" : "", currentLine.slice(0, charIndex));
+
+    if (charIndex < currentLine.length) {
+      charIndex += 1;
+      window.setTimeout(typeNextCharacter, 22);
+      return;
+    }
+
+    if (lineIndex < lines.length - 1) {
+      lineIndex += 1;
+      charIndex = 0;
+      code.textContent += "\n";
+      window.setTimeout(typeNextCharacter, currentLine === "" ? 70 : 180);
+    }
+  };
+
+  typeNextCharacter();
+};
+
 const interactiveCards = document.querySelectorAll(
   ".hero-stage-panel, .benefit-card, .service-card, .feature-card, .story-card, .testimonial-card, .team-card, .comparison-card, .cta-card, .authority-profile, .process-panel, .faq-list details"
 );
@@ -101,6 +167,9 @@ const revealObserver = new IntersectionObserver(
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("is-visible");
+        if (entry.target.classList.contains("code-typing")) {
+          typeCodeBlock(entry.target);
+        }
         revealObserver.unobserve(entry.target);
       }
     });
@@ -112,6 +181,7 @@ const revealObserver = new IntersectionObserver(
 );
 
 reveals.forEach((item) => revealObserver.observe(item));
+codeTypingBlocks.forEach((block) => revealObserver.observe(block));
 
 const sectionIds = ["servicios", "proceso", "faq", "contacto"];
 const sections = sectionIds
