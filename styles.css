@@ -1,22 +1,22 @@
 :root {
-  --bg: #0b0f19;
-  --bg-soft: #0f1522;
+  --bg: #0b0f14;
+  --bg-soft: #0d131d;
   --bg-strong: #111827;
-  --surface: rgba(17, 24, 39, 0.68);
-  --surface-strong: rgba(31, 41, 55, 0.84);
+  --surface: rgba(15, 21, 32, 0.72);
+  --surface-strong: rgba(22, 29, 43, 0.88);
   --surface-solid: #1f2937;
   --line: rgba(255, 255, 255, 0.08);
   --line-strong: rgba(255, 255, 255, 0.14);
   --text: #ffffff;
-  --muted: #9ca3af;
-  --muted-strong: #c5d0dd;
+  --muted: #98a4b6;
+  --muted-strong: #d6e2f2;
   --accent: #3b82f6;
-  --accent-soft: rgba(59, 130, 246, 0.12);
-  --accent-glow: rgba(59, 130, 246, 0.2);
+  --accent-soft: rgba(59, 130, 246, 0.16);
+  --accent-glow: rgba(59, 130, 246, 0.26);
   --white-glow: rgba(255, 255, 255, 0.08);
-  --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.26);
-  --shadow-card: 0 40px 90px rgba(0, 0, 0, 0.38);
-  --shadow-deep: 0 52px 120px rgba(0, 0, 0, 0.5);
+  --shadow-soft: 0 28px 70px rgba(0, 0, 0, 0.34);
+  --shadow-card: 0 44px 96px rgba(0, 0, 0, 0.44);
+  --shadow-deep: 0 60px 140px rgba(0, 0, 0, 0.58);
   --radius-xl: 34px;
   --radius-lg: 26px;
   --radius-md: 20px;
@@ -40,10 +40,10 @@ body {
   font-family: "Inter", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at 16% 12%, rgba(255, 255, 255, 0.06), transparent 24%),
-    radial-gradient(circle at 84% 18%, rgba(59, 130, 246, 0.06), transparent 18%),
-    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.03), transparent 30%),
-    linear-gradient(180deg, #0b0f19 0%, #090d15 46%, #070b12 100%);
+    radial-gradient(circle at 16% 12%, rgba(255, 255, 255, 0.045), transparent 24%),
+    radial-gradient(circle at 84% 18%, rgba(59, 130, 246, 0.08), transparent 18%),
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.028), transparent 30%),
+    linear-gradient(180deg, #0b0f14 0%, #080c13 46%, #06090f 100%);
   overflow-x: hidden;
 }
 
@@ -67,10 +67,11 @@ body::before {
 
 body::after {
   background:
-    radial-gradient(circle at var(--pointer-x, 50%) var(--pointer-y, 22%), rgba(255, 255, 255, 0.05), transparent 18%),
-    radial-gradient(circle at calc(var(--pointer-x, 50%) + 12%) calc(var(--pointer-y, 22%) + 6%), rgba(59, 130, 246, 0.08), transparent 16%);
-  opacity: 0.7;
-  transition: opacity 220ms ease;
+    radial-gradient(circle at var(--pointer-x, 50%) var(--pointer-y, 22%), rgba(255, 255, 255, 0.03), transparent 10%),
+    radial-gradient(circle at calc(var(--pointer-x, 50%) + 8%) calc(var(--pointer-y, 22%) + 4%), rgba(59, 130, 246, 0.12), transparent 12%);
+  filter: blur(48px);
+  opacity: 0.5;
+  transition: opacity 220ms ease, filter 220ms ease;
 }
 
 body.menu-open {
@@ -110,8 +111,8 @@ textarea {
 
 .page-shell::before {
   background:
-    radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.035), transparent 18%),
-    radial-gradient(circle at 85% 28%, rgba(59, 130, 246, 0.045), transparent 24%),
+    radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.03), transparent 18%),
+    radial-gradient(circle at 85% 28%, rgba(59, 130, 246, 0.055), transparent 24%),
     radial-gradient(circle at 52% 68%, rgba(255, 255, 255, 0.02), transparent 28%);
 }
 
@@ -166,9 +167,9 @@ main,
   border-radius: 28px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 46%),
-    rgba(11, 15, 25, 0.82);
-  backdrop-filter: blur(18px);
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+    rgba(8, 12, 18, 0.84);
+  backdrop-filter: blur(22px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.4);
   overflow: hidden;
 }
 
@@ -204,7 +205,7 @@ main,
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.08),
     0 14px 28px rgba(0, 0, 0, 0.2);
-  font-family: "Inter Tight", "Inter", sans-serif;
+  font-family: "Space Grotesk", "Inter", sans-serif;
   font-weight: 800;
   letter-spacing: -0.04em;
 }
@@ -325,18 +326,18 @@ main,
 
 .button:hover,
 .button:focus-visible {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.015);
 }
 
 .button-primary {
   color: var(--text);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 34%),
-    linear-gradient(180deg, rgba(31, 41, 55, 0.94), rgba(11, 15, 25, 0.96));
+    linear-gradient(180deg, rgba(23, 31, 45, 0.96), rgba(9, 13, 20, 0.98));
   border-color: rgba(255, 255, 255, 0.08);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    0 18px 38px rgba(0, 0, 0, 0.28);
+    0 18px 38px rgba(0, 0, 0, 0.34);
 }
 
 .button-primary:hover,
@@ -345,14 +346,14 @@ main,
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.12),
     0 24px 44px rgba(0, 0, 0, 0.34),
-    0 0 26px rgba(59, 130, 246, 0.08);
+    0 0 34px rgba(59, 130, 246, 0.16);
 }
 
 .button-secondary {
   color: var(--text);
   background: rgba(255, 255, 255, 0.025);
   border-color: var(--line);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 0 0 rgba(59, 130, 246, 0);
 }
 
 .button-secondary:hover,
@@ -361,7 +362,7 @@ main,
   background: rgba(255, 255, 255, 0.045);
   box-shadow:
     0 18px 40px rgba(0, 0, 0, 0.24),
-    0 0 24px rgba(255, 255, 255, 0.04);
+    0 0 24px rgba(59, 130, 246, 0.08);
 }
 
 .eyebrow {
@@ -401,16 +402,17 @@ main,
 .comparison-card h2,
 .cta-card h2 {
   margin: 0;
-  font-family: "Inter Tight", "Inter", sans-serif;
-  font-weight: 800;
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-weight: 700;
   letter-spacing: -0.055em;
-  line-height: 0.96;
+  line-height: 0.92;
   text-wrap: balance;
 }
 
 .hero-copy h1 {
   max-width: 12ch;
-  font-size: clamp(3rem, 6vw, 5.25rem);
+  font-size: clamp(3.2rem, 6.4vw, 5.9rem);
+  text-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
 }
 
 .section-heading h2,
@@ -418,7 +420,7 @@ main,
 .faq-side h2,
 .comparison-card h2,
 .cta-card h2 {
-  font-size: clamp(2.55rem, 4.2vw, 4.45rem);
+  font-size: clamp(2.7rem, 4.4vw, 4.8rem);
 }
 
 .hero-lead,
@@ -438,17 +440,41 @@ main,
   padding-top: clamp(3.5rem, 7vw, 6rem);
 }
 
+.hero .eyebrow,
+.hero h1,
+.hero .hero-lead,
+.hero .hero-actions,
+.hero .hero-points {
+  animation: heroRise 900ms cubic-bezier(0.2, 0.72, 0.2, 1) both;
+}
+
+.hero h1 {
+  animation-delay: 90ms;
+}
+
+.hero .hero-lead {
+  animation-delay: 160ms;
+}
+
+.hero .hero-actions {
+  animation-delay: 240ms;
+}
+
+.hero .hero-points {
+  animation-delay: 320ms;
+}
+
 .hero::before {
   content: "";
   position: absolute;
-  inset: 6% 0 auto;
-  height: 72%;
+  inset: -3% 0 auto;
+  height: 84%;
   background:
-    linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.035) 16%, transparent 32%, rgba(59, 130, 246, 0.045) 48%, transparent 64%, rgba(255, 255, 255, 0.03) 82%, transparent 100%),
-    repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.024) 0 1px, transparent 1px 16px);
+    linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.03) 16%, transparent 32%, rgba(59, 130, 246, 0.065) 48%, transparent 64%, rgba(255, 255, 255, 0.028) 82%, transparent 100%),
+    repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.024) 0 1px, transparent 1px 14px);
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 100%);
-  opacity: 0.44;
-  animation: codeRun 18s linear infinite;
+  opacity: 0.6;
+  animation: codeRun 15s linear infinite;
 }
 
 .hero::after {
@@ -456,10 +482,25 @@ main,
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.055), transparent 18%),
-    radial-gradient(circle at 72% 28%, rgba(59, 130, 246, 0.08), transparent 22%),
-    radial-gradient(circle at 80% 42%, rgba(255, 255, 255, 0.04), transparent 14%);
+    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.06), transparent 18%),
+    radial-gradient(circle at 66% 24%, rgba(59, 130, 246, 0.16), transparent 24%),
+    radial-gradient(circle at 80% 42%, rgba(255, 255, 255, 0.05), transparent 14%),
+    linear-gradient(180deg, transparent 0%, rgba(11, 15, 20, 0.14) 80%, rgba(11, 15, 20, 0.34) 100%);
   pointer-events: none;
+}
+
+.hero-inner::before {
+  content: "";
+  position: absolute;
+  inset: -4rem auto auto -2rem;
+  width: min(42vw, 560px);
+  height: min(42vw, 560px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.14), rgba(59, 130, 246, 0.05) 38%, transparent 70%);
+  filter: blur(18px);
+  opacity: 0.9;
+  pointer-events: none;
+  animation: pulseGlow 8s ease-in-out infinite;
 }
 
 .section-vector {
@@ -632,6 +673,18 @@ main,
   perspective: 1200px;
 }
 
+.hero-panel > *:nth-child(1) {
+  animation: heroCardIn 900ms cubic-bezier(0.2, 0.72, 0.2, 1) 220ms both;
+}
+
+.hero-panel > *:nth-child(2) {
+  animation: heroCardIn 900ms cubic-bezier(0.2, 0.72, 0.2, 1) 320ms both;
+}
+
+.hero-panel > *:nth-child(3) {
+  animation: heroCardIn 900ms cubic-bezier(0.2, 0.72, 0.2, 1) 420ms both;
+}
+
 .hero-card,
 .benefit-card,
 .service-card,
@@ -649,8 +702,8 @@ main,
   border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.08);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 24%),
-    linear-gradient(180deg, rgba(31, 41, 55, 0.76), rgba(11, 15, 25, 0.96));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 22%),
+    linear-gradient(180deg, rgba(23, 30, 43, 0.82), rgba(8, 12, 18, 0.98));
   box-shadow: var(--shadow-card);
   transition:
     transform 260ms ease,
@@ -716,11 +769,11 @@ main,
 .authority-profile:hover,
 .process-panel:hover,
 .faq-list details:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px) scale(1.01);
   border-color: rgba(255, 255, 255, 0.14);
   box-shadow:
     var(--shadow-deep),
-    0 0 28px rgba(59, 130, 246, 0.06);
+    0 0 34px rgba(59, 130, 246, 0.08);
 }
 
 .hero-card:hover::after,
@@ -770,7 +823,7 @@ main,
 .metric-row strong,
 .story-card strong {
   display: block;
-  font-family: "Inter Tight", "Inter", sans-serif;
+  font-family: "Space Grotesk", "Inter", sans-serif;
   font-size: clamp(2.2rem, 4vw, 3.25rem);
   line-height: 0.94;
   letter-spacing: -0.05em;
@@ -860,9 +913,9 @@ main,
 .comparison-grid h3,
 .process-step h3 {
   margin: 1rem 0 0.72rem;
-  font-family: "Inter Tight", "Inter", sans-serif;
-  font-size: 1.32rem;
-  line-height: 1.08;
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-size: 1.38rem;
+  line-height: 1.04;
   letter-spacing: -0.04em;
 }
 
@@ -1045,7 +1098,7 @@ main,
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.08),
     0 18px 36px rgba(0, 0, 0, 0.2);
-  font-family: "Inter Tight", "Inter", sans-serif;
+  font-family: "Space Grotesk", "Inter", sans-serif;
   font-weight: 800;
 }
 
@@ -1093,7 +1146,7 @@ main,
 
 .process-step span {
   display: inline-block;
-  font-family: "Inter Tight", "Inter", sans-serif;
+  font-family: "Space Grotesk", "Inter", sans-serif;
   font-size: 3.3rem;
   color: rgba(255, 255, 255, 0.14);
   letter-spacing: -0.06em;
@@ -1231,6 +1284,15 @@ main,
   transform: translateY(0) scale(1);
 }
 
+.service-card,
+.feature-card,
+.benefit-card,
+.story-card,
+.testimonial-card,
+.team-card {
+  transform: translateZ(0);
+}
+
 @keyframes floatOrbit {
   0%,
   100% {
@@ -1285,6 +1347,40 @@ main,
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.82;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes heroRise {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98) rotateX(8deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg);
   }
 }
 
@@ -1383,7 +1479,7 @@ main,
 
   .hero-copy h1 {
     max-width: 10ch;
-    font-size: clamp(2.85rem, 11vw, 4.4rem);
+    font-size: clamp(2.95rem, 11vw, 4.6rem);
   }
 
   .process-tabs {
