@@ -19,3 +19,23 @@ Landing one-page estatica inspirada en una arquitectura premium dark-tech, prepa
 
 - Reemplaza el email `hola@matedigital.com` por el real.
 - Si tenes logo, fotos o links legales, se pueden sumar en una segunda iteracion.
+
+## MCP
+
+El proyecto incluye una integracion minima con `@modelcontextprotocol/sdk` para exponer contexto del sitio como servidor MCP local.
+
+### Ejecutar el servidor MCP
+
+```bash
+npm run mcp:server
+```
+
+### Que expone
+
+- recurso `mate-digital://summary` con resumen del proyecto
+- recurso `mate-digital://sections` con el orden de secciones
+- herramienta `project_overview`
+- herramienta `list_site_sections`
+- herramienta `read_project_file`
+- herramienta `search_project_text`
+- prompt `review-section`

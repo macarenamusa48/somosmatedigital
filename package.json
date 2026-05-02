@@ -1,0 +1,11 @@
+{
+  "name": "mate-digital",
+  "private": true,
+  "scripts": {
+    "mcp:server": "node ./mcp/mate-digital-server.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.4.2"
+  }
+}
