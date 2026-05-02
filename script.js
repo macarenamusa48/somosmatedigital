@@ -156,8 +156,8 @@ const runHeroCodeLoop = (block) => {
       if (currentLine === undefined) {
         window.setTimeout(() => {
           block.classList.add("is-fading");
-          window.setTimeout(typeSequence, 680);
-        }, 1650);
+          window.setTimeout(typeSequence, 520);
+        }, 1100);
         return;
       }
 
@@ -168,14 +168,14 @@ const runHeroCodeLoop = (block) => {
 
       if (charIndex < currentLine.length) {
         charIndex += 1;
-        window.setTimeout(typeNextCharacter, 34);
+        window.setTimeout(typeNextCharacter, 24);
         return;
       }
 
       lineIndex += 1;
       charIndex = 0;
       code.textContent += "\n";
-      window.setTimeout(typeNextCharacter, currentLine === "" ? 140 : 240);
+      window.setTimeout(typeNextCharacter, currentLine === "" ? 90 : 160);
     };
 
     typeNextCharacter();
